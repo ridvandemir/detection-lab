@@ -1,8 +1,8 @@
-# detection_lab
+# detection-lab
 
 Objective
 
-The detection_lab project aimed to establish a environment for simulating and detecting cyber attacks. The main focus was to ingest and analyze logs within a Splunk. This hands-on experience was designed to deepen understanding of network security, attack patterns, and defensive strategies.
+The detection-lab project aimed to establish a environment for simulating and detecting cyber attacks. The main focus was to ingest and analyze logs within a Splunk. This hands-on experience was designed to deepen understanding of network security, attack patterns, and defensive strategies.
 
 Skills Learned
 
