@@ -37,9 +37,12 @@ Not Attached                   No                          Analyze MAlware
 
 In this lab, since we are going to create malware with Kali Linux and attack Windows Machine, the lab environment should not be connected to the internet. 
 
-1. Installation and Setup of Virtual Machines 
+1-Installation and Setup of Virtual Machines 
 
--Kali Linux (attacker), Windows 10 (victim) and Ubuntu 22.04 (Splunk) were installed on VirtuelBox as virtual machines. Splunk Enterprise was installed on the Ubuntu machine to view logs. Universal Forwarder and Sysmon were installed on Windows 10 machine to send logs to Splunk. After selecting 'Internal Network' as network, fixed IP address was selected on each virtual machine. After all that, we saw that the virtual machines were reachable with the ‘ping’ command.
+-Kali Linux (attacker), Windows 10 (victim) and Ubuntu 22.04 (Splunk) were installed on VirtuelBox as virtual machines.
+-Splunk Enterprise was installed on the Ubuntu machine to view logs.
+-Universal Forwarder and Sysmon were installed on Windows 10 machine to send logs to Splunk.
+-After selecting 'Internal Network' as network, fixed IP address was selected on each virtual machine. After all that, we saw that the virtual machines were reachable with the ‘ping’ command.
 
 2. Attack Scenario 
 
