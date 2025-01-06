@@ -37,7 +37,7 @@ In this lab, the lab environment was not connected to the Internet because of th
 - Splunk Enterprise was installed on the Ubuntu machine to view logs.
 - Universal Forwarder and Sysmon were installed on Windows 10 machine to send logs to Splunk.
 - After selecting 'Internal Network' as network, static IP address was selected on each virtual machine.
-- After all that, we saw that the virtual machines were reachable with the ‘ping’ command.
+- After installing virtual machines, we saw that they were reachable with the ‘ping’ command.
 
 2-Attack Scenario 
 
