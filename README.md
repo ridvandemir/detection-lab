@@ -35,7 +35,7 @@ In this lab, the lab environment was not connected to the Internet because of th
 
 - Kali Linux (attacker), Windows 10 (victim) and Ubuntu 22.04 (Splunk) were installed on VirtuelBox as virtual machines.
 - As a network ‘NAT Network' was selected and static IP address was determined on each virtual machine.
-- After installing virtual machines, we saw that they were reachable with the ‘ping’ command.
+- After installing virtual machines, I saw that they were reachable with the ‘ping’ command.
 - Splunk Enterprise was installed on the Ubuntu machine to view logs.
 - Universal Forwarder and Sysmon were installed on Windows 10 machine to send logs to Splunk.
 
