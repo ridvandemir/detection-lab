@@ -24,7 +24,7 @@ Network Diagram
 
 Steps
 
-First, we need to understand the network connections in the virtual environment. The network we use when testing tools and using sandbox will be different. When analyzing malware, we should not have access to the Internet.
+First, we need to understand the network connections in the virtual environment. The network we use when testing tools and sandboxing will be different. When analyzing malware, we should not have access to the Internet.
 
 - Testing Tools     ---> NAT, NAT Network, Bridged
 - Analyzing Malware ---> Host-Only, Internal Network/LAN Segment, Not Attached
@@ -63,7 +63,7 @@ In this lab, the lab environment was not connected to the Internet because of th
 - First we need to deactivate Windows Security on the Windows (victim) machine. Then I connected to the 192.168.0.250:9999 server from the web browser and downloaded the malware file 'Resume.pdf.exe' and ran it. When I looked at the network connections from the cmd console, I saw that there was a TCP connection from 192.168.10.100 to 192.168.10.250. 
   - netstat -anob 
 
-- After that, we can now connect to the Windows machine with the 'shell' command on the Kali Linux machine and enter the commands we want. 
+- After that, we can now connect to the Windows machine with the 'shell' command on the Kali Linux machine and try some commands we want. 
 
 4-Monitoring with Splunk 
 
